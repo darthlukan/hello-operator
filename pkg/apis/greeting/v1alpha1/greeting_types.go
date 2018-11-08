@@ -11,6 +11,7 @@ import (
 type GreetingSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
+	Message string `json:message`
 }
 
 // GreetingStatus defines the observed state of Greeting

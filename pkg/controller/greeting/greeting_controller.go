@@ -141,7 +141,7 @@ func newPodForCR(cr *greetingv1alpha1.Greeting) *corev1.Pod {
 				{
 					Name:    "busybox",
 					Image:   "busybox",
-					Command: []string{"sleep", "3600"},
+					Command: []string{"echo", "Hello, World!"},
 				},
 			},
 		},
