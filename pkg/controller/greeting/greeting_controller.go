@@ -137,6 +137,9 @@ func newPodForCR(cr *greetingv1alpha1.Greeting) *corev1.Pod {
 		},
 		Spec: corev1.PodSpec{
 			// Application container should go here
+			// For this example, hello-operator is managing a Greeting pod
+			// which has a busybox container that will echo whatever
+			// "message" happens to be in our CustomResource (Greeting.Spec.Message)
 			Containers: []corev1.Container{
 				{
 					Name:    "busybox",
