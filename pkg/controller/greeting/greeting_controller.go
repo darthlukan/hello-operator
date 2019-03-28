@@ -136,12 +136,11 @@ func newPodForCR(cr *greetingv1alpha1.Greeting) *corev1.Pod {
 			Labels:    labels,
 		},
 		Spec: corev1.PodSpec{
-			Message: cr.Message,
 			Containers: []corev1.Container{
 				{
 					Name:    "busybox",
 					Image:   "busybox",
-					Command: []string{"/usr/local/bin/greet", cr.Message},
+					Command: []string{"/usr/local/bin/greet", cr.Spec.Message},
 				},
 			},
 		},
