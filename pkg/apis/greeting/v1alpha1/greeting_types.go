@@ -6,7 +6,6 @@ import (
 
 // GreetingSpec defines the desired state of Greeting
 type GreetingSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 	Message string `json:message`
 	Size    int32  `json:size`
@@ -14,7 +13,6 @@ type GreetingSpec struct {
 
 // GreetingStatus defines the observed state of Greeting
 type GreetingStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 }
 
