@@ -49,7 +49,6 @@ func add(mgr manager.Manager, r reconcile.Reconciler) error {
 		return err
 	}
 
-	// TODO(user): Modify this to be the types you create that are owned by the primary resource
 	// Watch for changes to secondary resource Pods and requeue the owner Greeting
 	err = c.Watch(&source.Kind{Type: &corev1.Pod{}}, &handler.EnqueueRequestForOwner{
 		IsController: true,
@@ -137,11 +136,12 @@ func newPodForCR(cr *greetingv1alpha1.Greeting) *corev1.Pod {
 			Labels:    labels,
 		},
 		Spec: corev1.PodSpec{
+			Message: cr.Message,
 			Containers: []corev1.Container{
 				{
 					Name:    "busybox",
 					Image:   "busybox",
-					Command: []string{"echo", "Hello, World!"},
+					Command: []string{"/usr/local/bin/greet", cr.Message},
 				},
 			},
 		},
