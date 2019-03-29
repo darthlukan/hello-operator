@@ -1,8 +1,8 @@
 apiVersion: greeting.openshift.com/v1alpha1
 kind: Greeting
 metadata:
-  name: example-greeting
+  name: greeting-example
 spec:
-  # Add fields here
+  image: 'docker.io/darthlukan/greet:v0.0.1'
   message: 'Hello World!'
   size: 2
