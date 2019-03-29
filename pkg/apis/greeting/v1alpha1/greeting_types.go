@@ -7,6 +7,7 @@ import (
 // GreetingSpec defines the desired state of Greeting
 type GreetingSpec struct {
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
+	Image   string `json:image`
 	Message string `json:message`
 	Size    int32  `json:size`
 }
