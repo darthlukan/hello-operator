@@ -142,9 +142,9 @@ func newPodForCR(cr *greetingv1alpha1.Greeting) *corev1.Pod {
 			// "message" happens to be in our CustomResource (Greeting.Spec.Message)
 			Containers: []corev1.Container{
 				{
-					Name:    "busybox",
-					Image:   "busybox",
-					Command: []string{"echo", cr.Spec.Message},
+					Name:    "greet",
+					Image:   "docker.io/darthlukan/greet:v0.0.1",
+					Command: []string{"/usr/bin/greet", cr.Spec.Message},
 				},
 			},
 		},
